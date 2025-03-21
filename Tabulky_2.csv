@@ -1,7 +1,6 @@
-﻿Přehled plateb;Boxy;Příslušenství;Celkem;Tržba;;Druh chemie;Stav
-Hotovost;100;20;120;120;;Předmytí kol - stav chemie;Kritický stav
-Platební karta;50;0;50;50;;Předmytí karoserie - stav chemie;Kritický stav
-Věrnostní karta;10;30;40;0;;Šampón - stav chemie;Kritický stav
-Součet;160;50;210;170;;Mikroprášek - stav chemie;Kritický stav
-;;;;;;Vosk - stav chemie;Kritický stav
-;;;;;;Nanovosk - stav chemie;Kritický stav
+﻿Přehled plateb;Boxy;Příslušenství;Celkem;Tržba;
+Hotovost;100;20;120;120;
+Platební karta;50;0;50;50;
+Věrnostní karta;10;30;40;0;
+Součet;160;50;210;170;
+
