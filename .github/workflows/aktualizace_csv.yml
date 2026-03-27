@@ -2,7 +2,7 @@ name: Denní aktualizace CSV
 
 on:
   schedule:
-    - cron: "0 5 * * *"   # Každý den v 5:00 UTC = 6:00 Praha (letní čas)
+    - cron: "0 5,7,9,11,13 * * *"   # 5x denně: 6, 8, 10, 12, 14 hod Praha (letní čas)
   workflow_dispatch:       # Umožní i ruční spuštění přes GitHub UI
 
 jobs:
