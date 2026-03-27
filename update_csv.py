@@ -11,7 +11,7 @@ CSV_FILE = "Impulsy_ORCA.csv"   # cesta k CSV souboru v repozitáři
 
 def generuj_radky():
     praha = pytz.timezone("Europe/Prague")
-    dnes = datetime.now(praha).strftime("%Y-%m-%d")
+    dnes = datetime.now(praha).strftime("%Y.%m.%d %H:%M")
     
     hodnota = random.randint(100, 200)
     druh = random.choice(["Hotovost", "Platební karta", "Věrnostní karta"])
