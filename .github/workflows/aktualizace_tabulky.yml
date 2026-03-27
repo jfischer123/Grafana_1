@@ -1,0 +1,33 @@
+name: Denní souhrn do Tabulky_2
+
+on:
+  schedule:
+    - cron: "0 21 * * *"   # Každý den v 21:00 UTC = 23:00 Praha (letní čas)
+  workflow_dispatch:        # Umožní i ruční spuštění
+
+jobs:
+  souhrn:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repozitáře
+        uses: actions/checkout@v4
+
+      - name: Nastavení Pythonu
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalace závislostí
+        run: pip install pytz
+
+      - name: Spuštění skriptu
+        run: python update_tabulky.py
+
+      - name: Commit a push aktualizované tabulky
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Tabulky_2.csv
+          git diff --cached --quiet || git commit -m "Denní souhrn Tabulky_2 $(date +'%Y-%m-%d')"
+          git push
