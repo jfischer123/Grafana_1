@@ -23,6 +23,9 @@ jobs:
 
       - name: Spuštění skriptu
         run: python update_tabulky.py
+        env:
+          PYTHONIOENCODING: utf-8
+          PYTHONUTF8: 1
 
       - name: Commit a push aktualizované tabulky
         run: |
