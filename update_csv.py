@@ -13,7 +13,7 @@ def generuj_radky():
     praha = pytz.timezone("Europe/Prague")
     dnes = datetime.now(praha).strftime("%Y.%m.%d %H:%M")
     
-    hodnota = random.randint(10, 20)
+    hodnota = random.randrange(10, 201, 10)
     druh = random.choice(["Hotovost", "Platební karta", "Věrnostní karta"])
     
     return [{"Datum": dnes, "Hodnota": hodnota, "Druh platby": druh}]
