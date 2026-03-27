@@ -59,7 +59,7 @@ def main():
     # Načti již existující záznamy pro dnešek
     existujici = set()
     try:
-        with open(TABULKY_FILE, newline="", encoding="cp1252") as f:
+        with open(TABULKY_FILE, newline="", encoding="utf-8-sig") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 if row["Datum"].strip() == dnes:
@@ -68,7 +68,7 @@ def main():
         pass
 
     # Zapiš pouze řádky, které ještě neexistují
-    with open(TABULKY_FILE, "a", newline="", encoding="cp1252") as f:
+    with open(TABULKY_FILE, "a", newline="", encoding="utf-8-sig") as f:
         fieldnames = ["Přehled plateb", "Boxy", "Příslušenství", "Celkem", "Tržba", "Datum"]
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         for radek in nove_radky:
