@@ -1,6 +1,8 @@
 import csv
 import os
-from datetime import date
+import random
+from datetime import datetime
+import pytz
 
 # ============================================================
 # NASTAVENÍ – upravte podle potřeby
@@ -8,20 +10,13 @@ from datetime import date
 CSV_FILE = "Impulsy_ORCA.csv"   # cesta k CSV souboru v repozitáři
 
 def generuj_radky():
-    """
-    Vrať seznam nových řádků, které se přidají do CSV.
-    Každý řádek je slovník s klíči: Datum, Hodnota, Druh platby
+    praha = pytz.timezone("Europe/Prague")
+    dnes = datetime.now(praha).strftime("%Y-%m-%d")
     
-    Tuto funkci upravte podle vaší logiky výpočtu!
-    """
-    dnes = date.today().strftime("%Y-%m-%d")
+    hodnota = random.randint(100, 200)
+    druh = random.choice(["Hotovost", "Platební karta", "Věrnostní karta"])
     
-    # PŘÍKLAD – nahraďte vlastní logikou:
-    nove_radky = [
-        {"Datum": dnes, "Hodnota": 150, "Druh platby": "Karta"},
-        # {"Datum": dnes, "Hodnota": 200, "Druh platby": "Hotovost"},
-    ]
-    return nove_radky
+    return [{"Datum": dnes, "Hodnota": hodnota, "Druh platby": druh}]
 
 # ============================================================
 # Hlavní logika – neměňte
